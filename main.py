@@ -1,7 +1,10 @@
 from flask import Flask, redirect, request, url_for, jsonify
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+
+CORS(app, origins="*")
 
 @app.route('/api/name', methods=['GET'])  # <-- You need the @ symbol to decorate the function!
 def api_name():
